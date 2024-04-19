@@ -1,0 +1,38 @@
+<% layout("/layouts/boilerplate")%>
+<body>
+  <h2>Create a New Listings</h2>
+  <form method="POST" action="/listings">
+    <input name="listing[title]" placeholder="enter title" type="text" />
+    <br /><br />
+    <textarea
+      name="listing[description]"
+      placeholder="enter description"
+      type="text"
+    ></textarea>
+    <br /><br />
+    <input name="image" placeholder="enter image URL/Link" type="text" />
+    <br /><br />
+    <input name="listing[price]" placeholder="enter price" type="number" />
+    <br /><br />
+    <input name="listing[country]" placeholder="enter country" type="text" />
+    <br /><br />
+    <input name="listing[location]" placeholder="enter location" type="text" />
+    <br /><br />
+    <button id="addbtn">Add</button>
+    <script>
+      const addbtn = document.getElementById("addbtn");
+
+      addbtn.addEventListener("click", function () {
+        const isConfirmed = window.confirm(
+          "Are you sure you want to add this item?"
+        );
+
+        if (isConfirmed) {
+          console.log("Item Added!");
+        } else {
+          console.log("not Added.");
+        }
+      });
+    </script>
+  </form>
+</body>
